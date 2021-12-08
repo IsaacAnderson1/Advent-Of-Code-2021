@@ -3,7 +3,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Sonarp2 {
+public class Main {
 
 	public static void main(String[] args) {
 		ArrayList<Integer> num = importFile("en.txt");
