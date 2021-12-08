@@ -4,10 +4,14 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 class Main {
+
+
+
   public static void main(String[] args) {
     System.out.println(isIncreasing(importFile("en.txt")));
+    partB(importFile("en.txt"));  //en.txt is the input of regular integers
   }
-//en.txt is the file of integers
+
   public static ArrayList<Integer> importFile(String fileName){
     ArrayList<Integer> words = new ArrayList<>();
     try {
@@ -35,4 +39,18 @@ class Main {
    return count;
  }
 
+
+    public static void partB(ArrayList<Integer> nums){
+    int increases = 0;
+		int sum1 = nums.get(0) + nums.get(1) + nums.get(2);
+
+		for (int i = 1; i <= nums.size() - 3; i++) {
+			int sum2 = nums.get(i) + nums.get(i + 1) + nums.get(i + 2);
+			if (sum2 > sum1)
+				increases++;
+			
+			sum1 = sum2;
+		}
+		System.out.println(increases);
+	}
 }
